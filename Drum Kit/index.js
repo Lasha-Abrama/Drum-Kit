@@ -1,14 +1,13 @@
-var length = document.querySelectorAll(".drum").length;
+const length = document.querySelectorAll(".drum").length;
 
-while(length > 0 ){
-  document.querySelectorAll(".drum")[length - 1].addEventListener("click", function () {
-
-    var buttonInnerHtml = this.innerHTML;
+for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    const buttonInnerHtml = this.innerHTML;
     makesound(buttonInnerHtml);
     buttonAnimation(buttonInnerHtml);
-    })
-  length --;
-};
+  });
+}
+
 
 document.addEventListener("keydown", function(event){
   makesound(event.key);
@@ -20,31 +19,31 @@ document.addEventListener("keydown", function(event){
 function makesound (key) {
   switch (key) {
     case 'w':
-      var crash = new Audio("./sounds/crash.mp3");
+      const crash = new Audio("./sounds/crash.mp3");
       crash.play();
       break;
     case 'a':
-      var kick = new Audio("./sounds/kick-bass.mp3");
+      const kick = new Audio("./sounds/kick-bass.mp3");
       kick.play();
       break;
     case 's':
-      var snare = new Audio("./sounds/snare.mp3");
+      const snare = new Audio("./sounds/snare.mp3");
       snare.play();
       break;
     case 'd':
-      var tom1 = new Audio("./sounds/tom-1.mp3");
+      const tom1 = new Audio("./sounds/tom-1.mp3");
       tom1.play();
       break;
     case 'j':
-      var tom2 = new Audio("./sounds/tom-2.mp3");
+      const tom2 = new Audio("./sounds/tom-2.mp3");
       tom2.play();
       break;
     case 'k':
-      var tom3 = new Audio("./sounds/tom-3.mp3");
+      const tom3 = new Audio("./sounds/tom-3.mp3");
       tom3.play();
       break;
     case 'l':
-      var tom4 = new Audio("./sounds/tom-4.mp3");
+      const tom4 = new Audio("./sounds/tom-4.mp3");
       tom4.play();
       break;
     default:
